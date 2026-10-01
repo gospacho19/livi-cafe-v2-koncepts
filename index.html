@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="lv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>LIVI kafē — kanēļmaizītes Ģertrūdes ielā 37, Rīgā</title>
+<meta name="description" content="LIVI kafē — kafejnīca Ģertrūdes ielā 37, Rīgā. Kanēļmaizītes, kardamona un karameles maizītes, kūkas un kafija. P–Pk 7:30–19:00, S–Sv 9:30–19:00. Tālr. 20 509 080.">
+<meta name="theme-color" content="#c5ae63">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/buns-m.jpg" media="(max-width:860px)">
+<link rel="preload" as="image" href="img/buns.jpg" media="(min-width:861px)">
+<style>
+:root{
+  /* the lightbox over the door: khaki gold with cream letters */
+  --gold:#c5ae63; --gold2:#b59c50; --cream:#fcf8e3;
+  /* the room: pale walls, the dark slatted counter */
+  --paper:#f8f5ef; --paper2:#efe9de; --card:#fdfcf9;
+  --ink:#211913; --ink2:#4b4037; --mute:#7c7066; --line:#e2d9cb;
+  --dark:#231b16; --dark2:#30261f; --on:#f4eee3; --on2:#b8aa98; --onl:#453930;
+  --open:#3d7a3f;
+  /* the handwritten price tags along the counter */
+  --tag:#f3c91c;
+  --sans:"Sora", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif:"Lora", Georgia, "Times New Roman", serif;
+  --pad:16px; --max:1240px;
+}
+@media (min-width:600px){:root{--pad:32px}}
+@media (min-width:1100px){:root{--pad:48px}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink2);font:400 17px/1.6 var(--serif);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-family:var(--sans);font-weight:600;color:var(--ink);letter-spacing:-.02em}
+p,blockquote,figcaption{text-wrap:pretty}
+h1,h2,h3{text-wrap:balance}
+figure{margin:0}
+figcaption{margin-top:10px;font:400 12.5px/1.45 var(--sans);color:var(--mute)}
+button{font:inherit;color:inherit}
+[data-lang][hidden]{display:none!important}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.label{font:500 12px/1.3 var(--sans);letter-spacing:.09em;text-transform:uppercase;color:var(--mute);margin:0 0 14px}
+.h2{font-size:clamp(27px,6.6vw,46px);line-height:1.12}
+.lede{margin-top:16px;max-width:36em}
+
+/* concept notice */
+.notice{background:var(--dark);color:var(--on2);font:400 11.5px/1.4 var(--sans);text-align:center;padding:8px var(--pad);text-wrap:balance}
+.notice b{color:var(--on);font-weight:600}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border:0;border-radius:0;background:var(--ink);color:var(--paper);font:500 15px/1 var(--sans);text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .15s,color .15s,box-shadow .15s}
+.btn:hover{background:#000}
+.btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.line:hover{background:var(--ink);color:var(--paper)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* wordmark — traced from the lightbox sign and the window decal */
+.wm{display:block;fill:currentColor;overflow:visible}
+.wm use{stroke:currentColor;stroke-width:3;stroke-linejoin:round}
+.wm text{font-family:var(--sans);font-weight:600}
+
+/* ============ HERO: the sign ============ */
+.hero{background:var(--gold);color:var(--ink)}
+.bar{display:flex;align-items:center;gap:20px;height:50px}
+.bar .where{font:500 13.5px/1 var(--sans);text-decoration:none;color:var(--ink)}
+.nav{display:none;gap:28px}
+.nav a{font:500 14px/1 var(--sans);text-decoration:none;color:var(--ink)}
+.nav a:hover{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1.5px}
+.langs{display:flex;margin-left:auto;margin-right:-8px}
+.langs button{font:600 12.5px/1 var(--sans);letter-spacing:.06em;border:0;background:none;color:rgba(33,25,19,.55);padding:12px 8px;cursor:pointer}
+.langs button[aria-pressed="true"]{color:var(--ink);text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1.5px}
+.hero-grid{display:grid}
+@media (max-width:860px){
+  .hero-text{display:contents}
+  .hero .brand{order:1}
+  .hero-photo{order:2}
+  .hero-copy{order:3}
+}
+.hero .brand{color:var(--cream);padding:0 0 14px;display:flex;justify-content:center}
+.hero .brand .wm{width:min(36vw,180px);height:auto}
+.hero-photo{margin:0 calc(var(--pad) * -1);position:relative}
+.hero-photo img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.hero-photo figcaption{position:absolute;right:0;bottom:0;margin:0;padding:4px 8px;font-size:11.5px;line-height:1.3;color:rgba(255,255,255,.92);background:rgba(20,14,10,.42)}
+.hero-copy{padding:16px 0 26px}
+.hero h1.tag{font-size:clamp(28px,8vw,58px);line-height:1.1;letter-spacing:-.03em;color:var(--ink)}
+.hero .sub{font:400 16.5px/1.5 var(--serif);color:#3a2e22;margin-top:12px}
+.status{display:flex;align-items:center;gap:9px;font:500 14px/1.35 var(--sans);color:var(--ink);margin-top:12px}
+.status i{width:9px;height:9px;border-radius:50%;background:#8a2f22;flex:none}
+.status.is-open i{background:var(--open)}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.hero .btn.line{box-shadow:inset 0 0 0 1.5px rgba(33,25,19,.8)}
+
+@media (max-width:420px){
+  .hero .ctas .btn{flex:1 1 0;padding:0 12px}
+}
+@media (max-width:359px){
+  .btn{font-size:14px;gap:7px}
+  .hero .ctas .btn,.order .ctas .btn,.visit .ctas .btn{padding:0 6px}
+}
+@media (min-width:861px) and (max-width:980px){
+  .hero .ctas .btn{padding:0 14px;font-size:15px}
+}
+@media (min-width:861px){
+  .nav{display:flex;margin-left:auto}
+  .langs{margin-left:12px}
+  .bar{height:72px}
+  .bar .where{font-size:14px}
+  .hero-grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:0 56px;align-items:stretch}
+  .hero-text{display:flex;flex-direction:column;padding:40px 0 64px}
+  .hero .brand{justify-content:flex-start;padding:0}
+  .hero .brand .wm{width:min(100%,380px)}
+  .hero-copy{margin-top:auto;padding:64px 0 0}
+  /* the heading follows the column, so it stays on two lines from 861 px up */
+  .hero h1.tag{font-size:clamp(34px,4.1vw,56px)}
+  .hero .sub{font-size:19px;margin-top:22px;max-width:26em}
+  .status{font-size:15px;margin-top:16px}
+  .hero .ctas{margin-top:20px}
+  .btn{font-size:16px}
+  .hero-photo{margin:0 calc((100vw - min(100vw, var(--max))) / -2 - var(--pad)) 0 0;min-height:620px}
+  .hero-photo img{position:absolute;inset:0;height:100%;aspect-ratio:auto}
+  .hero-grid{min-height:min(calc(100vh - 106px), 820px)}
+}
+@media (min-width:1340px){
+  .hero-photo{margin-right:calc((100vw - var(--max)) / -2 - var(--pad))}
+}
+/* short laptop screens (1366x768, 1280x720): keep the status line and both buttons above the fold */
+@media (min-width:861px) and (max-height:840px){
+  .bar{height:60px}
+  .hero-grid{min-height:0}
+  .hero-text{padding:20px 0 36px}
+  .hero .brand .wm{width:min(100%,230px)}
+  .hero-copy{padding-top:28px}
+  .hero-photo{min-height:500px}
+}
+
+/* ============ ON THE COUNTER ============ */
+.sec{padding:72px 0}
+@media (min-width:861px){.sec{padding:112px 0}}
+.counter-grid{display:grid;gap:28px}
+.counter-photo{margin:4px calc(var(--pad) * -1) 0}
+.counter-photo figcaption,.visit-photo figcaption{padding:0 var(--pad)}
+.prices{list-style:none;margin:6px 0 0;padding:0}
+.prices li{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:16px;padding:10px 0;border-bottom:1px solid var(--line)}
+.prices li:first-child{border-top:1px solid var(--line)}
+.prices .n{font:500 17.5px/1.25 var(--sans);color:var(--ink)}
+.prices .n small{display:block;font:400 13px/1.3 var(--sans);color:var(--mute);margin-top:3px}
+/* each price sits on its yellow tag, the colour taken from the tags in the photo above */
+.prices .p{min-width:82px;padding:10px 10px 9px;background:var(--tag);color:#1f1a10;font:600 17px/1 var(--sans);text-align:center;font-variant-numeric:tabular-nums}
+.also{margin-top:22px}
+.fine{font:400 14px/1.5 var(--sans);color:var(--mute);margin-top:14px}
+.more{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 12px;margin-top:52px}
+.more figure img{width:100%;aspect-ratio:1;object-fit:cover}
+.more .wide{grid-column:1/-1;margin:0 calc(var(--pad) * -1)}
+.more .wide img{aspect-ratio:3/2}
+.more .wide figcaption{padding:0 var(--pad)}
+.more figcaption b{display:block;font:500 15px/1.3 var(--sans);color:var(--ink);margin-bottom:2px}
+/* Rīga 825: the sign's own pairing, cream on gold */
+.r825{background:var(--gold);color:#33281c;padding:30px 22px 32px;margin-top:56px}
+.r825 .num{display:block;font:600 clamp(84px,25vw,168px)/.78 var(--sans);letter-spacing:-.045em;color:var(--cream);margin:0 0 22px -.04em}
+.r825 .label{color:#4a3d22;margin-bottom:10px}
+.r825 h3{font-size:clamp(28px,6vw,40px);line-height:1.08}
+.r825 p.txt{margin-top:12px;max-width:34em}
+.r825 a{display:inline-block;margin-top:18px;font:500 15px/1 var(--sans);color:var(--ink);text-underline-offset:5px;text-decoration-thickness:1.5px}
+@media (min-width:861px){
+  .counter-grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:0 64px;align-items:start}
+  .counter-photo{margin:0;grid-column:2;grid-row:1 / span 2;position:sticky;top:32px}
+  .counter-photo figcaption{padding:0}
+  .counter-head{grid-column:1;grid-row:1}
+  .counter-list{grid-column:1;grid-row:2;margin-top:34px}
+  .more{grid-template-columns:minmax(0,3fr) minmax(0,2fr) minmax(0,2fr);gap:24px;margin-top:88px}
+  .more .wide{grid-column:auto;margin:0}
+  .more .wide figcaption{padding:0}
+  .r825{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:0 64px;align-items:end;padding:52px 56px 56px;margin-top:72px}
+  .r825 .num{margin-bottom:0}
+}
+
+/* ============ REVIEWS ============ */
+.reviews{background:var(--paper2)}
+.score{display:flex;align-items:flex-end;gap:14px;margin-bottom:34px}
+.score b{font:600 76px/.8 var(--sans);letter-spacing:-.04em;color:var(--ink)}
+.score > span{font:400 14.5px/1.35 var(--sans);color:var(--ink2);padding-bottom:2px}
+.quotes{display:grid;gap:34px}
+.quotes blockquote{margin:0}
+.quotes p{font:italic 400 21px/1.45 var(--serif);color:var(--ink)}
+.quotes cite{display:block;margin-top:12px;font:400 14px/1.4 var(--sans);font-style:normal;color:var(--mute)}
+@media (min-width:861px){
+  .score{margin-bottom:56px}
+  .quotes{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:44px 80px;align-items:start}
+  .quotes blockquote:first-child p{font-size:32px;line-height:1.3}
+}
+
+/* ============ SET ASIDE (composer) ============ */
+.order{background:var(--dark);color:var(--on2)}
+.order .label{color:var(--on2)}
+.order h2{color:var(--on)}
+.order .lede{color:var(--on2)}
+.order-grid{display:grid;gap:36px}
+.form{display:grid;gap:26px}
+.fld > .flabel{display:block;font:500 13px/1.3 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--on2);margin-bottom:10px}
+.items{list-style:none;margin:0;padding:0}
+.items li{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;padding:7px 0}
+.items .n{font:500 16px/1.25 var(--sans);color:var(--on)}
+.items .n small{display:block;font:400 13px/1.3 var(--sans);color:var(--on2);margin-top:3px;font-variant-numeric:tabular-nums}
+.step{display:flex;align-items:center}
+.step button{width:40px;height:40px;border:0;background:var(--dark2);color:var(--on);font:500 20px/1 var(--sans);cursor:pointer}
+.step button:hover{background:#3b3027}
+.step button:disabled{opacity:.35;cursor:default}
+.step output{width:40px;text-align:center;font:600 18px/1 var(--sans);color:var(--on);font-variant-numeric:tabular-nums}
+.chips{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:8px}
+.chips button{min-height:58px;padding:8px 6px;border:0;background:var(--dark2);color:var(--on);font:500 16px/1.2 var(--sans);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}
+.chips button small{font:400 13px/1 var(--sans);color:var(--on2)}
+.chips button[aria-pressed="true"] small{color:#4a3d22}
+.chips button[aria-pressed="true"]{background:var(--gold);color:var(--ink)}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+select,input[type=text]{width:100%;min-height:50px;padding:0 14px;border:0;border-radius:0;background:var(--dark2);color:var(--on);font:400 17px/1.2 var(--sans);-webkit-appearance:none;appearance:none}
+select{background-image:linear-gradient(45deg,transparent 50%,var(--on2) 50%),linear-gradient(135deg,var(--on2) 50%,transparent 50%);background-position:calc(100% - 20px) 22px,calc(100% - 15px) 22px;background-size:5px 5px;background-repeat:no-repeat;padding-right:36px}
+input::placeholder{color:#8f8272}
+select:focus,input:focus,.step button:focus-visible,.chips button:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+.msg{background:var(--dark2);padding:20px 20px 22px;border-left:3px solid var(--gold)}
+.msg .flabel{display:block;font:500 13px/1.3 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--on2);margin-bottom:10px}
+.msg pre{margin:0;white-space:pre-wrap;font:400 16px/1.55 var(--serif);color:var(--on)}
+.order .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.order .btn{background:var(--gold);color:var(--ink)}
+.order .btn:hover{background:#d4bd70}
+.order .btn.line{background:transparent;color:var(--on);box-shadow:inset 0 0 0 1.5px var(--on2)}
+.order .btn.line:hover{background:var(--on);color:var(--ink)}
+.order .fine{color:var(--on2)}
+.order .fine a{color:var(--on)}
+.hint{font:400 14px/1.4 var(--sans);color:#e3c36e;margin-top:12px}
+/* a desktop cannot send an sms: there, copying the text is the action that works */
+@media (min-width:861px) and (hover:hover) and (pointer:fine){
+  .order .ctas #copy{order:-1;background:var(--gold);color:var(--ink);box-shadow:none}
+  .order .ctas #copy:hover{background:#d4bd70}
+  .order .ctas #sms{background:transparent;color:var(--on);box-shadow:inset 0 0 0 1.5px var(--on2)}
+  .order .ctas #sms:hover{background:var(--on);color:var(--ink)}
+}
+@media (max-width:420px){.order .ctas .btn{flex:1 1 0;padding:0 12px}}
+@media (min-width:861px){
+  .order-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start}
+  .order .h2{font-size:clamp(26px,3.1vw,40px)}
+  .order-side{position:sticky;top:40px}
+  .form{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 32px}
+  .form .full{grid-column:1/-1}
+}
+
+/* ============ THE ROOM ============ */
+.room-grid{display:grid;gap:14px;margin-top:34px}
+.room-grid img{width:100%;object-fit:cover}
+.room-grid .a img{aspect-ratio:1160/1015}
+.room-grid .b img{aspect-ratio:1;object-position:50% 100%}
+@media (min-width:861px){
+  .room-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:64px;align-items:end}
+  .room-head .lede{margin:0}
+  .room-grid{grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:24px;margin-top:48px;align-items:start}
+  .room-grid .b img{aspect-ratio:900/1317}
+  .room-grid .a img{aspect-ratio:1160/970}
+}
+
+/* ============ WHERE & WHEN ============ */
+.visit{background:var(--paper2)}
+@media (max-width:860px){
+  .visit{padding-bottom:0}
+  .visit-photo{position:relative}
+  .visit .visit-photo figcaption{position:absolute;right:0;bottom:0;margin:0;padding:4px 8px;font-size:11.5px;line-height:1.3;color:rgba(255,255,255,.92);background:rgba(20,14,10,.42)}
+}
+.visit-grid{display:grid;gap:40px}
+.visit-photo{margin:0 calc(var(--pad) * -1);order:2}
+.visit-photo img{width:100%;aspect-ratio:1000/1100;object-fit:cover;object-position:50% 20%}
+.addr{font:400 17px/1.5 var(--sans);color:var(--ink2);margin-top:10px}
+.hours{margin:26px 0 0;padding:0;list-style:none}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid #d9cfbe;font:400 17px/1.3 var(--sans);color:var(--ink2)}
+.hours li:first-child{border-top:1px solid #d9cfbe}
+.hours li b{font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums}
+.hours li{font-size:16px}
+.hours li.today{color:var(--ink);font-weight:500}
+.hours li.today b{font-weight:600}
+.visit .status{margin-top:22px}
+.links{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px;font:500 16px/1.3 var(--sans)}
+.links a{color:var(--ink);text-underline-offset:5px;text-decoration-thickness:1.5px}
+.visit .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+@media (max-width:420px){.visit .ctas .btn{flex:1 1 0;padding:0 12px}}
+@media (min-width:861px){
+  .visit-grid{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:72px;align-items:center}
+  .visit-photo{margin:0;order:0}
+  .visit-photo figcaption{padding:0}
+  .visit-photo img{aspect-ratio:1100/1368}
+  /* today's row: a gold square in the gutter, the text stays on the shared edge */
+  .hours li > span{position:relative}
+  .hours li.today > span::before{content:"";position:absolute;left:-20px;top:50%;width:8px;height:8px;margin-top:-4px;background:var(--gold2)}
+}
+
+/* ============ FOOTER: the sign again ============ */
+.foot{background:var(--gold);color:var(--ink);padding:64px 0 28px}
+.foot .brand{color:var(--cream);display:flex;justify-content:center}
+.foot .brand .wm{width:min(76vw,440px);height:auto}
+.foot-info{display:grid;gap:6px;text-align:center;margin-top:36px;font:500 16px/1.5 var(--sans)}
+.foot-info a{text-underline-offset:4px;text-decoration-thickness:1.5px}
+.credits{margin-top:44px;padding-top:20px;border-top:1px solid rgba(33,25,19,.2);font:400 13px/1.55 var(--sans);color:#3b3023}
+.credits p + p{margin-top:8px}
+.credits b{font-weight:600;color:var(--ink)}
+@media (min-width:861px){
+  .foot{padding:96px 0 32px}
+  .credits{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px}
+  .credits p + p{margin-top:0}
+}
+</style>
+</head>
+<body>
+<div class="notice"><b>Nikita:</b> <span data-lang="lv">Dizaina priekšlikums — šī nav LIVI oficiālā lapa.</span><span data-lang="en" hidden>A design proposal — not LIVI cafe’s official website.</span></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <!-- LIVI, traced from the sign over the door and the decal on the window (photos: LIVI cafe) -->
+  <path id="livi" d="M0 0 L50 0 C40 24 32 48 32 72 C32 96 36 116 41 128 C43 133 47 134 50 130 L77 88 C79 85 82 85 84 88 L97 134 C98 138 96 140 93 140 L1 140 C0 94 0 46 0 0 Z M108 0 L146 0 L138 140 L108 140 Z M156 0 L202 0 C204 44 206 90 209 126 C216 84 228 40 240 0 L286 0 L242 140 L198 140 C178 104 160 56 156 0 Z M293 0 L333 0 L328 140 L294 140 Z"/>
+</defs></svg>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="bar">
+      <a class="where" href="#kur">Ģertrūdes iela 37</a>
+      <nav class="nav" aria-label="Sadaļas">
+        <a href="#cenas"><span data-lang="lv">Cenas</span><span data-lang="en" hidden>Prices</span></a>
+        <a href="#atsauksmes"><span data-lang="lv">Atsauksmes</span><span data-lang="en" hidden>Reviews</span></a>
+        <a href="#atlikt"><span data-lang="lv">Maizītes rītam</span><span data-lang="en" hidden>Set aside</span></a>
+        <a href="#kur"><span data-lang="lv">Kur un kad</span><span data-lang="en" hidden>Where &amp; when</span></a>
+      </nav>
+      <div class="langs" role="group" aria-label="Valoda / Language">
+        <button type="button" data-set="lv" aria-pressed="true">LV</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="brand">
+          <svg class="wm" viewBox="0 0 333 196" role="img" aria-label="LIVI kafē"><use href="#livi"/><text x="166.5" y="190" text-anchor="middle" font-size="40">kafē</text></svg>
+        </div>
+        <div class="hero-copy">
+          <h1 class="tag"><span data-lang="lv">Kanēļmaizītes<br> no pusastoņiem.</span><span data-lang="en" hidden>Cinnamon buns<br> from 7:30.</span></h1>
+          <p class="sub"><span data-lang="lv">Kafejnīca Ģertrūdes ielā: kanēļa, kardamona un karameles maizītes, kūkas un kafija.</span><span data-lang="en" hidden>Cinnamon, cardamom and caramel buns, cakes and coffee on Ģertrūdes iela.</span></p>
+          <p class="status" data-status><i></i><span class="st-text">P–Pk 7:30–19:00, S–Sv 9:30–19:00</span></p>
+          <div class="ctas">
+            <a class="btn" href="#atlikt"><span data-lang="lv">Atlikt maizītes</span><span data-lang="en" hidden>Set buns aside</span></a>
+            <a class="btn line" href="tel:+37120509080"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>20 509 080</a>
+          </div>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <picture>
+          <source media="(max-width:860px)" srcset="img/buns-m.jpg" width="1020" height="680">
+          <img src="img/buns.jpg" width="1200" height="1200" alt="Kanēļmaizītes cieši cita pie citas uz paplātes LIVI letē" fetchpriority="high">
+        </picture>
+        <figcaption><span data-lang="lv">Foto: Irzhina Parhomenko</span><span data-lang="en" hidden>Photo: Irzhina Parhomenko</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ============ ON THE COUNTER ============ -->
+  <section class="sec" id="cenas">
+    <div class="wrap">
+      <div class="counter-grid">
+        <div class="counter-head">
+          <p class="label"><span data-lang="lv">Uz letes</span><span data-lang="en" hidden>On the counter</span></p>
+          <h2 class="h2"><span data-lang="lv">Kanēlis, kardamons, karamele.</span><span data-lang="en" hidden>Cinnamon, cardamom, caramel.</span></h2>
+          <p class="lede"><span data-lang="lv">Cenas — tādas, kā ar marķieri rakstīts uz dzeltenajām zīmītēm pie letes.</span><span data-lang="en" hidden>Prices as they are written in marker on the yellow tags along the counter.</span></p>
+        </div>
+        <figure class="counter-photo">
+          <img src="img/counter.jpg" width="1160" height="942" loading="lazy" alt="LIVI lete: kanēļa, kardamona, siera un karameles maizītes ar dzeltenām cenu zīmītēm">
+          <figcaption><span data-lang="lv">Lete ar zīmītēm. Foto: Annie, Google kartes</span><span data-lang="en" hidden>The counter and its tags. Photo: Annie, Google Maps</span></figcaption>
+        </figure>
+        <div class="counter-list">
+          <ul class="prices">
+            <li><span class="n"><span data-lang="lv">Kanēļa rullītis</span><span data-lang="en" hidden>Cinnamon roll<small>kanēļa rullītis</small></span></span><span class="p"><span data-lang="lv">3,50 €</span><span data-lang="en" hidden>€3.50</span></span></li>
+            <li><span class="n"><span data-lang="lv">Kardamona maizīte</span><span data-lang="en" hidden>Cardamom bun<small>kardamona maizīte</small></span></span><span class="p"><span data-lang="lv">3,00 €</span><span data-lang="en" hidden>€3.00</span></span></li>
+            <li><span class="n"><span data-lang="lv">Karameles maizīte</span><span data-lang="en" hidden>Caramel bun<small>karameles maizīte</small></span></span><span class="p"><span data-lang="lv">3,50 €</span><span data-lang="en" hidden>€3.50</span></span></li>
+            <li><span class="n"><span data-lang="lv">Picmaizīte</span><span data-lang="en" hidden>Pizza bun<small>picmaizīte</small></span></span><span class="p"><span data-lang="lv">3,50 €</span><span data-lang="en" hidden>€3.50</span></span></li>
+            <li><span class="n"><span data-lang="lv">Siermaizīte</span><span data-lang="en" hidden>Cheese bun<small>siermaizīte</small></span></span><span class="p"><span data-lang="lv">2,50 €</span><span data-lang="en" hidden>€2.50</span></span></li>
+          </ul>
+          <p class="also"><span data-lang="lv">Ir arī ābolu rozītes, cepumi un kūkas. Dzērienu sarakstā pie sienas aiz letes — kafija, matcha latte un tējas.</span><span data-lang="en" hidden>You’ll also find apple roses, cookies and cakes. On the drinks board behind the counter: coffee, matcha latte and teas.</span></p>
+          <p class="fine"><span data-lang="lv">Cenas nolasītas no zīmītēm viesu fotogrāfijās un var būt mainījušās; visu klāstu redzēsiet uz vietas.</span><span data-lang="en" hidden>Prices are read off the tags in guests’ photos and may have changed; the full range is at the counter.</span></p>
+        </div>
+      </div>
+
+      <div class="more">
+        <figure class="wide">
+          <img src="img/cookies.jpg" width="1100" height="733" loading="lazy" alt="Cepumi ar krēma cepurītēm uz koka dēļa LIVI vitrīnā">
+          <figcaption><b><span data-lang="lv">Cepumi vitrīnā</span><span data-lang="en" hidden>Cookies in the display case</span></b><span data-lang="lv">Foto: LIVI cafe</span><span data-lang="en" hidden>Photo: LIVI cafe</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/cakes.jpg" width="660" height="660" loading="lazy" alt="Divi kūku gabali uz šķīvjiem un divas glāzes tējas uz koka galda">
+          <figcaption><b><span data-lang="lv">Kūkas un tēja</span><span data-lang="en" hidden>Cake and tea</span></b><span data-lang="lv">Foto: Žanete Žukova</span><span data-lang="en" hidden>Photo: Žanete Žukova</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/coffee.jpg" width="660" height="660" loading="lazy" alt="Kafija baltā tasē ar Rocket Bean raķeti uz koka galdiņa">
+          <figcaption><b><span data-lang="lv">Kafija Rocket Bean tasē</span><span data-lang="en" hidden>Coffee in a Rocket Bean cup</span></b><span data-lang="lv">Foto: Edgars Jaudzems</span><span data-lang="en" hidden>Photo: Edgars Jaudzems</span></figcaption>
+        </figure>
+      </div>
+
+      <aside class="r825">
+        <span class="num" aria-hidden="true">825</span>
+        <div>
+          <p class="label"><span data-lang="lv">Rīgai 825</span><span data-lang="en" hidden>Rīga 825</span></p>
+          <h3><span data-lang="lv">Vecrīgas kūka</span><span data-lang="en" hidden>The Vecrīga cake</span></h3>
+          <p class="txt"><span data-lang="lv">LIVI ir viena no beķerejām Rīgas 825 gadu jubilejas projektā un piedalās tajā ar Vecrīgas kūku ar aveņu pildījumu. Pajautājiet pie letes.</span><span data-lang="en" hidden>LIVI is one of the bakeries in the city’s 825th-anniversary project, taking part with the Vecrīga (Old Rīga) cake with a raspberry filling. Ask at the counter.</span></p>
+          <a href="https://rigabakeries.lv/en/bekereja/livi-cafe" target="_blank" rel="noopener">rigabakeries.lv ↗</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS ============ -->
+  <section class="sec reviews" id="atsauksmes">
+    <div class="wrap">
+      <div>
+        <p class="label"><span data-lang="lv">Viesi Google kartēs</span><span data-lang="en" hidden>Guests on Google Maps</span></p>
+        <div class="score"><b><span data-lang="lv">4,6</span><span data-lang="en" hidden>4.6</span></b><span><span data-lang="lv">no 5, 205 atsauksmes</span><span data-lang="en" hidden>out of 5, 205 reviews</span></span></div>
+      </div>
+      <div class="quotes">
+        <blockquote>
+          <p data-lang="lv">„…tās bulciņas un kūkas!!!!! vienkārši fantastiskas!!! vislabākās kanēļmaizītes Rīgā.”</p>
+          <p data-lang="en" hidden>“…those buns and cakes!!!!! simply fantastic!!! the best cinnamon buns in Rīga.”</p>
+          <cite>Arta S.<span data-lang="en" hidden>, translated from Latvian</span></cite>
+        </blockquote>
+        <blockquote>
+          <p data-lang="lv">„Ši vieta jau ir kļuvusi par manu favorītu. Garšīga kafija, fantastiskās un īpašas smalkmaizītes. Bet galvenā zvaigzne ir barista.”</p>
+          <p data-lang="en" hidden>“This place has already become my favourite. Tasty coffee, fantastic and special pastries. But the main star is the barista.”</p>
+          <cite>Jekaterina P.<span data-lang="en" hidden>, translated from Latvian</span></cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SET ASIDE ============ -->
+  <section class="sec order" id="atlikt">
+    <div class="wrap order-grid">
+      <div class="order-side">
+        <p class="label"><span data-lang="lv">Maizītes rītam</span><span data-lang="en" hidden>Set aside for the morning</span></p>
+        <h2 class="h2"><span data-lang="lv">Vakarā uzrakstiet, ko paņemsiet no rīta.</span><span data-lang="en" hidden>Text tonight, pick&nbsp;up in the morning.</span></h2>
+        <p class="lede"><span data-lang="lv">Atzīmējiet maizītes un laiku — lapa sagatavos īsziņu uz 20 509 080. Tas ir lūgums, nevis apstiprināts pasūtījums: sagaidiet LIVI atbildi.</span><span data-lang="en" hidden>Pick the buns and a time — the page writes a text message to 20 509 080 for you. It’s a request, not a confirmed order: wait for LIVI’s reply.</span></p>
+      </div>
+      <form class="form" id="composer" onsubmit="return false">
+        <div class="fld full">
+          <span class="flabel"><span data-lang="lv">Ko</span><span data-lang="en" hidden>What</span></span>
+          <ul class="items" id="items"></ul>
+        </div>
+        <div class="fld full">
+          <span class="flabel" id="dayl"><span data-lang="lv">Kurā dienā</span><span data-lang="en" hidden>Which day</span></span>
+          <div class="chips" id="days" role="group" aria-labelledby="dayl"></div>
+        </div>
+        <div class="two full">
+          <label class="fld"><span class="flabel"><span data-lang="lv">Cikos</span><span data-lang="en" hidden>At</span></span><select id="time"></select></label>
+          <label class="fld"><span class="flabel"><span data-lang="lv">Vārds</span><span data-lang="en" hidden>Name</span></span><input type="text" id="name" autocomplete="given-name" maxlength="40"></label>
+        </div>
+        <div class="full">
+          <div class="msg" aria-live="polite">
+            <span class="flabel"><span data-lang="lv">Īsziņa, ko saņems LIVI</span><span data-lang="en" hidden>The message LIVI receives</span></span>
+            <pre id="preview"></pre>
+          </div>
+          <p class="hint" id="hint" hidden><span data-lang="lv">Izvēlieties vismaz vienu maizīti.</span><span data-lang="en" hidden>Choose at least one bun.</span></p>
+          <div class="ctas">
+            <a class="btn" id="sms" href="sms:+37120509080"><span data-lang="lv">Sūtīt īsziņu</span><span data-lang="en" hidden>Send the text</span></a>
+            <button class="btn line" type="button" id="copy"><span data-lang="lv">Kopēt tekstu</span><span data-lang="en" hidden>Copy text</span></button>
+          </div>
+          <p class="fine"><span data-lang="lv">Lapa neko nesūta un neglabā — īsziņa atveras jūsu telefonā. Vai arī zvaniet: <a href="tel:+37120509080">20 509 080</a>.</span><span data-lang="en" hidden>The page sends and stores nothing — the message opens on your phone. Or call: <a href="tel:+37120509080">20 509 080</a>.</span></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ THE ROOM ============ -->
+  <section class="sec" id="telpa">
+    <div class="wrap">
+      <div class="room-head">
+        <div>
+          <p class="label"><span data-lang="lv">Uz vietas</span><span data-lang="en" hidden>Staying in</span></p>
+          <h2 class="h2"><span data-lang="lv">Pie loga vai ārā pie durvīm.</span><span data-lang="en" hidden>By the window, or outside by the door.</span></h2>
+        </div>
+        <p class="lede"><span data-lang="lv">Iekšā ir galdiņi pie lielajiem logiem un ķieģeļu sienas. Siltajā laikā galdiņi ir arī ārā.</span><span data-lang="en" hidden>Inside there are tables by the big windows and the brick wall. In the warm months there are tables outside too.</span></p>
+      </div>
+      <div class="room-grid">
+        <figure class="a">
+          <img src="img/room.jpg" width="1160" height="1015" loading="lazy" alt="LIVI telpa: ķieģeļu siena, galdiņi pie loga, vitrīna un lete">
+          <figcaption><span data-lang="lv">Foto: Margus Nerman, Google kartes</span><span data-lang="en" hidden>Photo: Margus Nerman, Google Maps</span></figcaption>
+        </figure>
+        <figure class="b">
+          <img src="img/terrace.jpg" width="900" height="1317" loading="lazy" alt="Maizīte, kūkas gabals un divas kafijas uz galdiņa ārā; aiz tiem — LIVI logs">
+          <figcaption><span data-lang="lv">Pie ieejas. Foto: Claudine D, Google kartes</span><span data-lang="en" hidden>By the door. Photo: Claudine D, Google Maps</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHERE & WHEN ============ -->
+  <section class="sec visit" id="kur">
+    <div class="wrap visit-grid">
+      <figure class="visit-photo">
+        <img src="img/front.jpg" width="1100" height="1368" loading="lazy" alt="LIVI kafejnīcas logs un dzeltenā izkārtne Ģertrūdes ielā vakarā">
+        <figcaption><span data-lang="lv">Izkārtne Ģertrūdes ielā. Foto: LIVI cafe</span><span data-lang="en" hidden>The sign on Ģertrūdes iela. Photo: LIVI cafe</span></figcaption>
+      </figure>
+      <div>
+        <p class="label"><span data-lang="lv">Kur un kad</span><span data-lang="en" hidden>Where &amp; when</span></p>
+        <h2 class="h2">Ģertrūdes iela 37</h2>
+        <p class="addr">Rīga, LV-1011</p>
+        <p class="status" data-status><i></i><span class="st-text"></span></p>
+        <ul class="hours" id="hours">
+          <li data-days="1-5"><span><span data-lang="lv">Pirmdiena–piektdiena</span><span data-lang="en" hidden>Monday–Friday</span></span><b>7:30–19:00</b></li>
+          <li data-days="6-0"><span><span data-lang="lv">Sestdiena–svētdiena</span><span data-lang="en" hidden>Saturday–Sunday</span></span><b>9:30–19:00</b></li>
+        </ul>
+        <div class="ctas">
+          <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=%C4%A2ertr%C5%ABdes%20iela%2037%2C%20R%C4%ABga&amp;destination_place_id=ChIJ1WvzCGXP7kYRJL1FdK7-3uU" target="_blank" rel="noopener"><span data-lang="lv">Maršruts</span><span data-lang="en" hidden>Directions</span></a>
+          <a class="btn line" href="tel:+37120509080"><span data-lang="lv">Zvanīt</span><span data-lang="en" hidden>Call</span></a>
+        </div>
+        <div class="links">
+          <a href="https://maps.google.com/?cid=16563956504743755044" target="_blank" rel="noopener">Google <span data-lang="lv">kartes</span><span data-lang="en" hidden>Maps</span> ↗</a>
+          <a href="https://www.instagram.com/livi.cafee/" target="_blank" rel="noopener">Instagram @livi.cafee ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="brand"><svg class="wm" viewBox="0 0 333 196" role="img" aria-label="LIVI kafē"><use href="#livi"/><text x="166.5" y="190" text-anchor="middle" font-size="40">kafē</text></svg></div>
+    <div class="foot-info">
+      <span>Ģertrūdes iela 37, Rīga</span>
+      <span><a href="tel:+37120509080">20 509 080</a></span>
+      <span><span data-lang="lv">P–Pk 7:30–19:00, S–Sv 9:30–19:00</span><span data-lang="en" hidden>Mon–Fri 7:30–19:00, Sat–Sun 9:30–19:00</span></span>
+    </div>
+    <div class="credits">
+      <p><span data-lang="lv">Dizaina priekšlikumu veidoja <b>Nikita</b> — šī nav LIVI kafejnīcas oficiālā lapa. Fakti: Google kartes, rigabakeries.lv un viesu atsauksmes; cenas — no zīmītēm viesu fotogrāfijās. Burti „LIVI” pārzīmēti no izkārtnes.</span><span data-lang="en" hidden>A design proposal by <b>Nikita</b> — this is not LIVI cafe’s official website. Facts: Google Maps, rigabakeries.lv and guest reviews; prices from the tags in guests’ photos. The LIVI lettering is redrawn from the sign.</span></p>
+      <p><span data-lang="lv">Fotogrāfijas: LIVI cafe (izkārtne, cepumi) un viesi Google kartēs — Irzhina Parhomenko (maizītes), Annie (lete), Žanete Žukova (kūkas), Edgars Jaudzems (kafija), Margus Nerman (telpa), Claudine D (pie ieejas).</span><span data-lang="en" hidden>Photos: LIVI cafe (the sign, cookies) and guests on Google Maps — Irzhina Parhomenko (buns), Annie (the counter), Žanete Žukova (cakes), Edgars Jaudzems (coffee), Margus Nerman (the room), Claudine D (by the door).</span></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var TZ = 'Europe/Riga', PHONE = '+37120509080';
+  var OPEN = function(dow){ return (dow === 0 || dow === 6) ? 570 : 450; }, CLOSE = 1140; // minutes
+  var ITEMS = [
+    {lv:'Kanēļa rullītis', en:'cinnamon roll', p:'3,50'},
+    {lv:'Kardamona maizīte', en:'cardamom bun', p:'3,00'},
+    {lv:'Karameles maizīte', en:'caramel bun', p:'3,50'},
+    {lv:'Picmaizīte', en:'pizza bun', p:'3,50'},
+    {lv:'Siermaizīte', en:'cheese bun', p:'2,50'}
+  ];
+  var DAY_LV = ['svētdien','pirmdien','otrdien','trešdien','ceturtdien','piektdien','sestdien'];
+  var DAY_LV_SHORT = ['Sv','P','O','T','C','Pk','S'];
+  var DAY_EN = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var MON_EN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var lang = 'lv', counts = ITEMS.map(function(){ return 0; }), dayIdx = null, days = [];
+
+  function rigaNow(){
+    var p = {}, f = new Intl.DateTimeFormat('en-US', {timeZone:TZ, year:'numeric', month:'numeric', day:'numeric', hour:'numeric', minute:'numeric', hourCycle:'h23'});
+    f.formatToParts(new Date()).forEach(function(x){ p[x.type] = x.value; });
+    var d = new Date(Date.UTC(+p.year, +p.month - 1, +p.day));
+    return {date:d, dow:d.getUTCDay(), min:(+p.hour % 24) * 60 + (+p.minute)};
+  }
+  function hm(m){ return Math.floor(m / 60) + ':' + ('0' + m % 60).slice(-2); }
+  function addDays(d, n){ var x = new Date(d.getTime()); x.setUTCDate(x.getUTCDate() + n); return x; }
+
+  /* ---------- open now ---------- */
+  function status(){
+    var n = rigaNow(), o = OPEN(n.dow), t, open = false;
+    if (n.min < o) t = lang === 'lv' ? 'Šodien atvērts no ' + hm(o) : 'Opens today at ' + hm(o);
+    else if (n.min < CLOSE){ open = true; t = lang === 'lv' ? 'Atvērts līdz ' + hm(CLOSE) : 'Open until ' + hm(CLOSE); }
+    else { var o2 = OPEN((n.dow + 1) % 7); t = lang === 'lv' ? 'Slēgts, rīt atvērts no ' + hm(o2) : 'Closed, opens tomorrow at ' + hm(o2); }
+    document.querySelectorAll('[data-status]').forEach(function(el){
+      el.classList.toggle('is-open', open);
+      el.querySelector('.st-text').textContent = t;
+    });
+    document.querySelectorAll('#hours li').forEach(function(li){
+      var wk = li.getAttribute('data-days') === '1-5', today = wk ? (n.dow >= 1 && n.dow <= 5) : (n.dow === 0 || n.dow === 6);
+      li.classList.toggle('today', today);
+      });
+  }
+
+  /* ---------- set-aside composer ---------- */
+  function buildItems(){
+    var ul = document.getElementById('items'); ul.innerHTML = '';
+    ITEMS.forEach(function(it, i){
+      var li = document.createElement('li');
+      var name = lang === 'lv' ? it.lv : it.en.charAt(0).toUpperCase() + it.en.slice(1);
+      var price = lang === 'lv' ? it.p + ' €' : '€' + it.p.replace(',', '.'); // the tag price, as in the list above; shown, never added up
+      li.innerHTML = '<span class="n">' + name + '<small>' + (lang === 'en' ? it.lv.toLowerCase() + ', ' : '') + price + '</small></span>' +
+        '<span class="step"><button type="button" data-d="-1" aria-label="' + (lang === 'lv' ? 'Mazāk: ' : 'Fewer: ') + name + '">−</button>' +
+        '<output aria-live="polite">' + counts[i] + '</output>' +
+        '<button type="button" data-d="1" aria-label="' + (lang === 'lv' ? 'Vairāk: ' : 'More: ') + name + '">+</button></span>';
+      li.querySelectorAll('button').forEach(function(b){
+        b.addEventListener('click', function(){
+          counts[i] = Math.max(0, Math.min(24, counts[i] + (+b.getAttribute('data-d'))));
+          li.querySelector('output').textContent = counts[i];
+          li.querySelector('[data-d="-1"]').disabled = counts[i] === 0;
+          render();
+        });
+      });
+      li.querySelector('[data-d="-1"]').disabled = counts[i] === 0;
+      ul.appendChild(li);
+    });
+  }
+  function buildDays(){
+    var n = rigaNow(); days = [];
+    if (Math.ceil((n.min + 45) / 30) * 30 <= CLOSE - 30) days.push({off:0}); // today only while a pick-up slot is still left
+    days.push({off:1}); days.push({off:2});
+    days.forEach(function(d){ d.date = addDays(n.date, d.off); d.dow = d.date.getUTCDay(); });
+    if (dayIdx === null || dayIdx >= days.length) dayIdx = days.length === 3 ? 1 : 0; // default: tomorrow
+    var box = document.getElementById('days'); box.innerHTML = '';
+    days.forEach(function(d, i){
+      var b = document.createElement('button'); b.type = 'button';
+      var rel = lang === 'lv' ? ['Šodien','Rīt','Parīt'][d.off] : ['Today','Tomorrow','Day after'][d.off];
+      var dd = d.date.getUTCDate() + '.' + (d.date.getUTCMonth() + 1) + '.';
+      b.innerHTML = '<span>' + rel + '</span><small>' + (lang === 'lv' ? DAY_LV_SHORT[d.dow] + ', ' + dd : DAY_EN[d.dow].slice(0,3) + ', ' + d.date.getUTCDate() + ' ' + MON_EN[d.date.getUTCMonth()]) + '</small>';
+      b.setAttribute('aria-pressed', i === dayIdx ? 'true' : 'false');
+      b.addEventListener('click', function(){ dayIdx = i; buildDays(); buildTimes(); render(); });
+      box.appendChild(b);
+    });
+  }
+  function buildTimes(){
+    var sel = document.getElementById('time'), keep = sel.value, d = days[dayIdx], n = rigaNow();
+    var from = OPEN(d.dow);
+    if (d.off === 0) from = Math.max(from, Math.ceil((n.min + 45) / 30) * 30);
+    sel.innerHTML = '';
+    for (var m = from; m <= CLOSE - 30; m += 30){
+      var o = document.createElement('option'); o.value = hm(m); o.textContent = hm(m); sel.appendChild(o);
+    }
+    if (keep && [].some.call(sel.options, function(o){ return o.value === keep; })) sel.value = keep;
+  }
+  function message(){
+    var d = days[dayIdx], t = document.getElementById('time').value, nm = document.getElementById('name').value.trim();
+    var lines = [], any = false;
+    ITEMS.forEach(function(it, i){ if (counts[i]){ any = true; lines.push(counts[i] + ' × ' + (lang === 'lv' ? it.lv.toLowerCase() : it.en + ' (' + it.lv.toLowerCase() + ')')); } });
+    if (!any) lines.push(lang === 'lv' ? '… (izvēlieties maizītes)' : '… (choose your buns)');
+    var dd = d.date.getUTCDate() + '.' + (d.date.getUTCMonth() + 1) + '.';
+    var txt;
+    if (lang === 'lv'){
+      var rel = ['šodien','rīt','parīt'][d.off];
+      txt = 'Labdien! Vai varat man atlikt:\n' + lines.join('\n') + '\nPaņemšu ' + rel + ' (' + DAY_LV[d.dow] + ', ' + dd + ') ap ' + t + '.' + (nm ? '\nVārds: ' + nm : '') + '\nPaldies!';
+    } else {
+      var relE = ['today','tomorrow','the day after tomorrow'][d.off];
+      txt = 'Hello! Could you set aside for me:\n' + lines.join('\n') + '\nI’ll pick them up ' + relE + ' (' + DAY_EN[d.dow] + ' ' + d.date.getUTCDate() + ' ' + MON_EN[d.date.getUTCMonth()] + ') at about ' + t + '.' + (nm ? '\nName: ' + nm : '') + '\nThank you!';
+    }
+    return {text:txt, ok:any};
+  }
+  function render(){
+    var m = message();
+    document.getElementById('preview').textContent = m.text;
+    var a = document.getElementById('sms');
+    a.href = 'sms:' + PHONE + '?&body=' + encodeURIComponent(m.text);
+    if (m.ok) document.getElementById('hint').hidden = true;
+  }
+  function needItems(e){
+    if (message().ok) return false;
+    if (e) e.preventDefault();
+    document.getElementById('hint').hidden = false;
+    var first = document.querySelector('#items [data-d="1"]'); if (first) first.focus();
+    return true;
+  }
+  document.getElementById('sms').addEventListener('click', needItems);
+  document.getElementById('time').addEventListener('change', render);
+  document.getElementById('name').addEventListener('input', render);
+  document.getElementById('copy').addEventListener('click', function(){
+    var b = this, m = message(); if (needItems()) return;
+    var done = function(){ var s = b.querySelectorAll('[data-lang]'); s.forEach(function(x){ x.dataset.t = x.textContent; x.textContent = x.getAttribute('data-lang') === 'lv' ? 'Nokopēts' : 'Copied'; }); setTimeout(function(){ s.forEach(function(x){ x.textContent = x.dataset.t; }); }, 1600); };
+    try { navigator.clipboard.writeText(m.text).then(done, function(){}); } catch(e){}
+  });
+
+  /* ---------- language ---------- */
+  function setLang(l){
+    lang = l === 'en' ? 'en' : 'lv';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-lang]').forEach(function(el){ el.hidden = el.getAttribute('data-lang') !== lang; });
+    document.querySelectorAll('.langs button').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-set') === lang ? 'true' : 'false'); });
+    document.getElementById('name').placeholder = lang === 'lv' ? 'piem., Anna' : 'e.g. Anna';
+    document.querySelector('.nav').setAttribute('aria-label', lang === 'lv' ? 'Sadaļas' : 'Sections');
+    try { localStorage.setItem('livi-lang', lang); } catch(e){}
+    status(); buildItems(); buildDays(); buildTimes(); render();
+  }
+  document.querySelectorAll('.langs button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.getAttribute('data-set')); }); });
+  var q = null; try { q = new URLSearchParams(location.search).get('lang'); } catch(e){}
+  var saved = null; try { saved = localStorage.getItem('livi-lang'); } catch(e){}
+  setLang(q === 'en' || q === 'lv' ? q : (saved || 'lv'));
+  setInterval(status, 60000);
+})();
+</script>
+</body>
+</html>
